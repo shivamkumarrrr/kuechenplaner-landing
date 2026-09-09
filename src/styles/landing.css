@@ -1,0 +1,136 @@
+@import './tokens.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  The landing page is a single client's job ad, so its palette is fixed rather
+  than fetched: it overrides the same token names the quiz brands at runtime,
+  which is why both pages share one set of Tailwind utilities.
+
+  MÖBEL MARTIN red on a near-black ink. `--accent-deep` is the shade used for
+  accent-coloured *text*: the brand red itself sits too light against white for
+  small copy, so headings and eyebrows use the deep variant.
+*/
+:root {
+  --primary: #14181c;
+  --primary-hover: #000000;
+  --accent: #d81e2b;
+  --accent-hover: #b81824;
+  --accent-deep: #a8161f;
+
+  --bg: #f4f4f5;
+  --text: #2b2f33;
+  --muted: #63696f;
+  --border: #dcdcdd;
+  --card-bg: #ffffff;
+  --surface: #f4f4f5;
+
+  --radius: 10px;
+  --radius-sm: 8px;
+  --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  --font-display: 'Montserrat', var(--font);
+
+  /* Typography scale — inspired by Lovable/CodeRabbit */
+  --text-display: 3rem;
+  --text-display-md: 3.75rem;
+  --text-display-lg: 4.5rem;
+  --text-heading: 2rem;
+  --text-heading-md: 2.5rem;
+  --text-subheading: 1.25rem;
+  --text-body: 1rem;
+  --text-body-lg: 1.125rem;
+  --text-muted: 0.875rem;
+  --text-small: 0.8125rem;
+  --text-xs: 0.75rem;
+
+  /* Letter spacing — tighter for headings, normal for body */
+  --tracking-tight: -0.03em;
+  --tracking-normal: -0.01em;
+  --tracking-wide: 0.05em;
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/*
+  The hero interleaves its photo differently per breakpoint (between the job
+  card and the intro on mobile, its own full-height column on desktop), which is
+  exactly what named grid areas are for — utility classes cannot reorder a
+  single DOM node across two different track layouts.
+*/
+@layer components {
+}
+
+/* Room for the sticky mobile CTA bar so it never covers the footer content. */
+@media (max-width: 767px) {
+  body {
+    padding-bottom: 84px;
+  }
+}
+
+/* Hero title coloring animation */
+.hero-title-highlight {
+  /* Ends stay on the ink colour and only the middle warms up: pure --accent on
+     white sits near 2.3:1, under the 3:1 large-text floor. */
+  background: linear-gradient(
+    90deg,
+    var(--primary) 0%,
+    var(--accent-deep) 55%,
+    var(--primary) 100%
+  );
+  background-size: 100% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+
+/* Logo coloring animation — purple + orange hue shift */
+.hero-logo-highlight {
+  animation: logoHueShift 4s ease-in-out infinite;
+}
+
+@keyframes logoHueShift {
+  0%,
+  100% {
+    filter: hue-rotate(260deg) saturate(1.2);
+  }
+  50% {
+    filter: hue-rotate(20deg) saturate(1.1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-title-highlight {
+    animation: none;
+    -webkit-text-fill-color: var(--primary);
+    background: none;
+  }
+  .hero-logo-highlight {
+    animation: none;
+    filter: none;
+  }
+}

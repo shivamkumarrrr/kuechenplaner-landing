@@ -1,0 +1,10 @@
+import puppeteer from 'puppeteer';
+const [S,url,out,w,h]=process.argv.slice(2);
+const b=await puppeteer.launch();const p=await b.newPage();
+const errs=[];p.on('pageerror',e=>errs.push(String(e)));p.on('console',m=>m.type()==='error'&&errs.push(m.text()));
+await p.setViewport({width:+w,height:+h,isMobile:+w<500});
+await p.goto(url,{waitUntil:'networkidle0'});
+await new Promise(r=>setTimeout(r,900));
+await p.screenshot({path:`${S}/${out}.webp`,type:'webp',quality:58});
+console.log(JSON.stringify(errs));
+await b.close();
