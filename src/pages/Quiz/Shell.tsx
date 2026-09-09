@@ -16,7 +16,7 @@ function Logo({ config, className }: LogoProps) {
   if (logoUrl) {
     return (
       <img
-        className={cn('h-[34px] w-[34px] rounded-lg object-contain', className)}
+        className={cn('h-7 w-auto max-w-[160px] object-contain object-left', className)}
         src={logoUrl}
         alt={job.company || ''}
       />
@@ -117,9 +117,13 @@ export function Shell({ config, phase, percent, progressText, children }: ShellP
         <div className="mx-auto flex w-full max-w-shell items-center justify-between px-5 py-3">
           <div className="flex min-w-0 items-center gap-2.5">
             <Logo config={config} />
-            <span className="truncate text-[15px] font-semibold text-primary">
-              {job.company || 'Online-Test'}
-            </span>
+            {/* A wordmark logo already says the company name — printing it again
+                beside the image just doubles it. */}
+            {!(config.branding || {}).logoUrl && (
+              <span className="truncate text-[15px] font-semibold text-primary">
+                {job.company || 'Online-Test'}
+              </span>
+            )}
           </div>
           <Badge aria-live="polite">{progressText}</Badge>
         </div>
@@ -150,10 +154,7 @@ export function Shell({ config, phase, percent, progressText, children }: ShellP
             <div className="mb-2.5 text-[18px] font-bold leading-tight text-primary">
               {job.title || ''}
             </div>
-            <div className="mb-[18px] flex items-center gap-2 text-[15px] font-medium text-muted">
-              <span className="inline-flex h-[28px] w-[28px] shrink-0 items-center justify-center overflow-hidden rounded-full border border-border bg-card">
-                <Logo config={config} className="h-full w-full rounded-none" />
-              </span>
+            <div className="mb-[18px] text-[14px] font-semibold uppercase tracking-[0.12em] text-muted">
               {job.company || ''}
             </div>
             <div className="mb-3 text-[14px] font-semibold uppercase tracking-wider text-muted">

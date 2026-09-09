@@ -9,7 +9,9 @@
   "continueLabel": "Weiter",
   "branding": {
     "primary": "#14181c",
-    "accent": "#d81e2b"
+    "accent": "#d81e2b",
+    "logoUrl": "/assets/moebel-martin-logo.png",
+    "thankYouImage": "/assets/mm-konz.jpg"
   },
   "job": {
     "title": "Küchenplaner / Küchenberater (m/w/d)",
