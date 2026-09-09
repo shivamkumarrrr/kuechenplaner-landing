@@ -158,7 +158,7 @@ export const processSteps: {
   {
     number: '01',
     title: 'Online-Test machen',
-    body: 'Kurzer Test, ca. 4 Minuten – ganz ohne Anschreiben.',
+    body: 'Kurzer Test – ganz ohne Anschreiben.',
     icon: 'clipboard',
   },
   {
