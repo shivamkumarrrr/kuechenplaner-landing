@@ -19,7 +19,7 @@ export const company = {
 
 export const hero = {
   title: 'Küchenplaner / Küchenberater in Voll- oder Teilzeit (m/w/d) gesucht',
-  eyebrow: 'Stellenangebot · Konz bei Trier',
+  eyebrow: 'Stellenangebot · Konz',
   photo: 'assets/mm-hero.jpg',
   photoAlt: 'Küchenplanung am Bildschirm im MÖBEL MARTIN Einrichtungshaus',
   intro:
@@ -29,7 +29,7 @@ export const hero = {
 };
 
 export const jobInfo = {
-  location: 'Konz bei Trier',
+  location: 'Konz',
   remote: 'Voll- oder Teilzeit',
   hours: 'Quereinsteiger willkommen',
 };
