@@ -1,10 +1,13 @@
 import type { ReactNode } from 'react';
 import {
   Bike,
+  Clock3,
   Coins,
   GraduationCap,
+  MapPin,
   Rocket,
   ShieldCheck,
+  Sparkles,
   CalendarCheck,
   ClipboardList,
   Target,
@@ -60,6 +63,17 @@ export const HomeIcon = () => (
     <path d="M6 10v9h12v-9" strokeLinejoin="round" />
   </svg>
 );
+
+const factIcon = {
+  className: 'h-[17px] w-[17px] shrink-0 text-accent',
+  strokeWidth: 1.9,
+} as const;
+
+export const jobFactIcons: Record<'pin' | 'clock' | 'welcome', ReactNode> = {
+  pin: <MapPin {...factIcon} />,
+  clock: <Clock3 {...factIcon} />,
+  welcome: <Sparkles {...factIcon} />,
+};
 
 const processIconProps = { className: 'h-6 w-6', strokeWidth: 2 } as const;
 

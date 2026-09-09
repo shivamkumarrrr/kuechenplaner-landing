@@ -28,11 +28,11 @@ export const hero = {
     'Machen Sie jetzt unseren kurzen Online-Test und finden Sie heraus, ob wir zueinander passen:',
 };
 
-export const jobInfo = {
-  location: 'Konz',
-  remote: 'Voll- oder Teilzeit',
-  hours: 'Quereinsteiger willkommen',
-};
+export const jobInfo: { label: string; icon: 'pin' | 'clock' | 'welcome' }[] = [
+  { label: 'Konz', icon: 'pin' },
+  { label: 'Voll- oder Teilzeit', icon: 'clock' },
+  { label: 'Quereinsteiger willkommen', icon: 'welcome' },
+];
 
 /**
  * Six facts, not the ad's full list: the section has to stay one readable screen
