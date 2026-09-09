@@ -11,8 +11,7 @@ export const CTA_LABEL = "Hier geht's zum TEST";
 export const company = {
   name: 'MÖBEL MARTIN',
   tagline: 'Einrichtungshaus Konz',
-  /** No logo file from the client yet — the header falls back to a wordmark. */
-  logo: '',
+  logo: 'assets/moebel-martin-logo.png',
   address: 'Granastraße 32 · 54329 Konz',
   phone: 'Tel: 06501 – 60 90',
   phoneHref: '+49650160900',
@@ -21,8 +20,8 @@ export const company = {
 export const hero = {
   title: 'Küchenplaner / Küchenberater in Voll- oder Teilzeit (m/w/d) gesucht',
   eyebrow: 'Stellenangebot · Konz bei Trier',
-  photo: '',
-  photoAlt: 'MÖBEL MARTIN Küchenausstellung',
+  photo: 'assets/mm-hero.jpg',
+  photoAlt: 'Küchenplanung am Bildschirm im MÖBEL MARTIN Einrichtungshaus',
   intro:
     'Sie erwecken Küchenträume zum Leben – ob als erfahrene Fachkraft oder als motivierter Quereinsteiger? Bei uns planen Sie mit professioneller 3D-Software und begleiten Ihre Kundinnen und Kunden vom ersten Entwurf bis zur fertigen Küche.',
   ctaLead:
@@ -85,7 +84,7 @@ export const sectionEyebrows = {
   benefits: 'Warum MÖBEL MARTIN',
   process: 'Bewerbungsablauf',
   jobDetails: 'Stellenbeschreibung',
-  team: 'Das Team',
+  team: 'Arbeitsplatz',
   finalCta: 'Jetzt bewerben',
 };
 
@@ -126,6 +125,23 @@ export const jobDetails = [
     body: 'Unbefristeter Arbeitsvertrag, 30 Tage Urlaub, moderner Arbeitsplatz, kostenloser Parkplatz, Mitarbeiterrabatt auf das gesamte Sortiment, Corporate Benefits und die Möglichkeit eines BusinessBikes.',
   },
 ];
+
+export const workplace = {
+  heading: 'Ihr Arbeitsplatz in Konz',
+  body: 'Ein Einrichtungshaus direkt über der Mosel, wenige Minuten von Trier – mit eigener Küchenausstellung, Restaurant und kostenlosen Mitarbeiterparkplätzen.',
+  photos: [
+    {
+      src: 'assets/mm-konz.jpg',
+      alt: 'MÖBEL MARTIN Einrichtungshaus in Konz aus der Luft',
+      caption: 'Einrichtungshaus Konz',
+    },
+    {
+      src: 'assets/mm-beratung.jpg',
+      alt: 'Beratungsgespräch mit Farbmustern im Einrichtungshaus',
+      caption: 'Beratung auf der Fläche',
+    },
+  ],
+};
 
 export const finalCta = {
   heading: 'Finden Sie heraus, ob wir zusammenpassen',

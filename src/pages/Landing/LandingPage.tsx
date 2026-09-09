@@ -7,6 +7,7 @@ import { JobDetails } from './JobDetails';
 import { ProcessSteps } from './ProcessSteps';
 import { SiteHeader } from './SiteHeader';
 import { StickyMobileCta } from './StickyMobileCta';
+import { Workplace } from './Workplace';
 
 /**
  * The job ad itself. Its CTAs navigate to the quiz as a full page
@@ -23,6 +24,7 @@ export function LandingPage() {
       <Hero />
       <Benefits />
       <ProcessSteps />
+      <Workplace />
       <JobDetails />
       <FinalCta />
       <Footer />

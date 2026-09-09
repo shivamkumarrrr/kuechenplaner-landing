@@ -14,7 +14,15 @@ interface WordmarkProps {
  */
 export function Wordmark({ className, tone = 'ink' }: WordmarkProps) {
   if (company.logo) {
-    return <img src={company.logo} alt={company.name} className={cn('h-7 w-auto', className)} />;
+    return (
+      <img
+        src={company.logo}
+        alt={company.name}
+        // The supplied logo is red-on-black artwork; on the dark footer it needs
+        // knocking out to white or the wordmark disappears into the panel.
+        className={cn('h-6 w-auto md:h-7', tone === 'invert' && 'brightness-0 invert', className)}
+      />
+    );
   }
 
   return (
