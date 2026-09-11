@@ -73,8 +73,8 @@
   "scoring": {
     "rejectThreshold": 40,
     "matchScreen": {
-      "headline": "Volltreffer!",
-      "body": "Ihr Profil passt richtig gut zu dieser Stelle. Nur noch ein Schritt: Hinterlassen Sie Ihre Kontaktdaten, damit wir uns bei Ihnen melden können."
+      "headline": "Volltreffer: Wir passen zusammen",
+      "body": "Ihr Profil passt gut zu dieser Stelle. Hinterlassen Sie uns nur noch Ihre Kontaktdaten, damit wir uns bei Ihnen melden können."
     },
     "rejectScreen": {
       "headline": "Leider passt es aktuell nicht.",
@@ -421,7 +421,9 @@
         "type": "textarea",
         "required": false
       }
-    ]
+    ],
+    "uploadLabel": "Anhänge (optional)",
+    "uploadHelp": "Hier können Sie Lebenslauf, Zertifikate etc. hochladen. In diesem Schritt ist das aber nicht erforderlich – Ihre Antworten reichen uns für die Vorauswahl."
   },
   "thankYou": {
     "headline": "Vielen Dank für Ihre Bewerbung!",
